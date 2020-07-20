@@ -1,16 +1,15 @@
-### Hi there 👋
+## 博客 [xujinkai.net](https://xujinkai.net/)
 
-<!--
-**XUJINKAI/XUJINKAI** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+利用Github Pages搭建的个人博客
 
-Here are some ideas to get you started:
+## [OneQuick - 热键工具](http://onequick.org/)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Windows热键辅助工具，简化操作，提高效率。
+
+<img src="https://onequick.org/img/feature/screen-volume.gif" style="height: 150px;">
+
+## [ShellCommand - 自定义右键菜单](https://github.com/XUJINKAI/ShellCommand)
+
+无需编辑注册表，通过配置文件动态生成，告别敲入命令行的苦恼。
+
+<img src="https://raw.githubusercontent.com/XUJINKAI/ShellCommand/develop/docs/preview.png" style="height: 220px;">
