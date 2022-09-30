@@ -12,8 +12,6 @@
 
 - [ShellCommand](https://github.com/XUJINKAI/ShellCommand) 自定义右键菜单，无需编辑注册表，通过配置文件动态生成，告别敲入命令行的苦恼
 
-- [cipherc](https://github.com/XUJINKAI/cipherc) 密码类工具，设计中...
-
 #### 库
 
 - [cmdparser](https://github.com/XUJINKAI/cmdparser) C语言命令行解析库，测试及示例充分，高度可定制
@@ -21,3 +19,5 @@
 #### 工具类
 
 - [webhook-bridge](https://github.com/XUJINKAI/webhook-bridge) 桥接不同应用的webhook（gitlab-->飞书）
+
+- [cipherc](https://github.com/XUJINKAI/cipherc) 密码类工具，设计中...
