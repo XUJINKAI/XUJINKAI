@@ -5,6 +5,17 @@ set -e
 export GIT_NAME=${GIT_NAME:-"XUJINKAI"}
 export GIT_EMAIL=${GIT_EMAIL:-"XUJINKAI@users.noreply.github.com"}
 
+function config_wsl() {
+    local file = "/etc/wsl.conf"
+    if [ ! -f $file ]; then
+        touch $file
+    fi
+    if [ ! grep -q "default=root" $file ]; then
+        echo "[user]" >> $file
+        echo "default=root" >> $file
+    fi
+}
+
 function install_base() {
     apt-get install -y \
         curl \
@@ -13,7 +24,7 @@ function install_base() {
         git
 }
 
-function setup_git() {
+function config_git() {
     git config --global credential.helper store
     git config --global core.ignorecase false
     git config --global http.sslVerify false
@@ -22,7 +33,8 @@ function setup_git() {
 }
 
 function install_zsh() {
-    install_base
+    ping -c 1 github.com
+
     apt-get install -y zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -49,14 +61,69 @@ function install_cpp() {
     ln -s /usr/bin/clang-format-15 /usr/bin/clang-format
 }
 
-apt-get update
+arg_config_wsl=false
+arg_base=false
+arg_config_git=false
+arg_zsh=false
+arg_cpp=false
+arg_clean=false
 
-install_base
-ping -c 1 github.com
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 [--docker|--wsl] [--base] [--config-git] [--config-wsl] [--zsh] [--cpp] [--clean]"
+    exit 1
+fi
+while [ $# -gt 0 ]; do
+    case "$1" in
+    --docker)
+        arg_base=true
+        arg_config_git=true
+        arg_zsh=true
+        arg_clean=true
+        ;;
+    --wsl)
+        arg_config_wsl=true
+        arg_base=true
+        arg_config_git=true
+        arg_zsh=true
+        ;;
+    --base)         arg_base=true;;
+    --config-git)   arg_config_git=true;;
+    --config-wsl)   arg_config_wsl=true;;
+    --zsh)          arg_zsh=true;;
+    --cpp)          arg_cpp=true;;
+    --clean)        arg_clean=true;;
+    *)
+        echo "Unknown option: $1"
+        exit 1
+        ;;
+    esac
+    shift
+done
 
-setup_git
-install_zsh
-install_cpp
+# real start
 
-apt-get clean
-rm -rf /var/lib/apt/lists/*
+if [ "$arg_config_wsl" = true ]; then
+    config_wsl
+fi
+
+if [ "$arg_base" = true ]; then
+    apt-get update
+    install_base
+fi
+
+if [ "$arg_config_git" = true ]; then
+    config_git
+fi
+
+if [ "$arg_zsh" = true ]; then
+    install_zsh
+fi
+
+if [ "$arg_cpp" = true ]; then
+    install_cpp
+fi
+
+if [ "$arg_clean" = true ]; then
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+fi

@@ -5,7 +5,7 @@
 FROM ubuntu:latest
 
 COPY ./init.sh /root/init.sh
-RUN chmod +x /root/init.sh && /root/init.sh
+RUN chmod +x /root/init.sh && /root/init.sh --docker --cpp
 
 WORKDIR /home
 CMD ["/bin/zsh"]
