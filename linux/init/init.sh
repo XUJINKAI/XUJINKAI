@@ -5,7 +5,19 @@ set -e
 export GIT_NAME=${GIT_NAME:-"XUJINKAI"}
 export GIT_EMAIL=${GIT_EMAIL:-"XUJINKAI@users.noreply.github.com"}
 
+function config_git() {
+    git config --global credential.helper store
+    git config --global core.ignorecase false
+    git config --global http.sslVerify false
+    git config --global user.name "$GIT_NAME"
+    git config --global user.email "$GIT_EMAIL"
+    # git config --global user.name "XUJINKAI"
+    # git config --global user.email "XUJINKAI@users.noreply.github.com"
+}
+
 function config_wsl() {
+    git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+
     local file = "/etc/wsl.conf"
     if [ ! -f $file ]; then
         touch $file
@@ -22,14 +34,6 @@ function install_base() {
         vim \
         iputils-ping \
         git
-}
-
-function config_git() {
-    git config --global credential.helper store
-    git config --global core.ignorecase false
-    git config --global http.sslVerify false
-    git config --global user.name "$GIT_NAME"
-    git config --global user.email "$GIT_EMAIL"
 }
 
 function install_zsh() {
@@ -61,15 +65,29 @@ function install_cpp() {
     ln -s /usr/bin/clang-format-15 /usr/bin/clang-format
 }
 
+function install_dotnet() {
+    wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+    chmod +x dotnet-install.sh
+    ./dotnet-install.sh --version latest
+    # ./dotnet-install.sh --channel 7.0
+    rm dotnet-install.sh
+    if ! grep -q "DOTNET_ROOT" ~/.zshrc; then
+        echo Writting to ~/.zshrc
+        echo "export DOTNET_ROOT=\$HOME/.dotnet" >> ~/.zshrc
+        echo "export PATH=\$PATH:\$HOME/.dotnet:\$HOME/.dotnet/tools" >> ~/.zshrc
+    fi
+}
+
 arg_config_wsl=false
 arg_base=false
 arg_config_git=false
 arg_zsh=false
 arg_cpp=false
+arg_dotnet=false
 arg_clean=false
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 [--docker|--wsl] [--base] [--config-git] [--config-wsl] [--zsh] [--cpp] [--clean]"
+    echo "Usage: $0 [--docker|--wsl] [--base] [--config-git] [--config-wsl] [--zsh] [--cpp] [--dotnet] [--clean]"
     exit 1
 fi
 while [ $# -gt 0 ]; do
@@ -91,6 +109,7 @@ while [ $# -gt 0 ]; do
     --config-wsl)   arg_config_wsl=true;;
     --zsh)          arg_zsh=true;;
     --cpp)          arg_cpp=true;;
+    --dotnet)       arg_dotnet=true;;
     --clean)        arg_clean=true;;
     *)
         echo "Unknown option: $1"
@@ -121,6 +140,10 @@ fi
 
 if [ "$arg_cpp" = true ]; then
     install_cpp
+fi
+
+if [ "$arg_dotnet" = true ]; then
+    install_dotnet
 fi
 
 if [ "$arg_clean" = true ]; then
