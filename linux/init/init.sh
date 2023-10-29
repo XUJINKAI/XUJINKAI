@@ -18,11 +18,11 @@ function config_git() {
 function config_wsl() {
     git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 
-    local file = "/etc/wsl.conf"
+    local file="/etc/wsl.conf"
     if [ ! -f $file ]; then
         touch $file
     fi
-    if [ ! grep -q "default=root" $file ]; then
+    if ! grep -q "default=root" $file ; then
         echo "[user]" >> $file
         echo "default=root" >> $file
     fi
