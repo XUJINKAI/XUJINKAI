@@ -8,9 +8,10 @@
 
 - [OneQuick](http://onequick.org/) Windows热键辅助工具，简化操作，提高效率
 
-- [ShellCommand](https://github.com/XUJINKAI/ShellCommand) 通过配置文件动态添加右键菜单
+- [crypto-online](https://github.com/XUJINKAI/crypto-online) 在线密码工具箱
+  - [xx-crypto-cli](https://github.com/XUJINKAI/xx-crypto-cli) [WIP] 跨平台密码工具箱
 
-- [xx-crypto-cli](https://github.com/XUJINKAI/xx-crypto-cli) [WIP] 跨平台密码工具箱
+- [ShellCommand](https://github.com/XUJINKAI/ShellCommand) 通过配置文件动态添加右键菜单
 
 #### 库
 
