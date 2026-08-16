@@ -4,14 +4,21 @@
 
 #### 个人博客 [xujinkai.net](https://xujinkai.net/) 
 
-#### 应用
+#### 桌面应用
 
 - [OneQuick](http://onequick.org/) Windows热键辅助工具，简化操作，提高效率
 
+#### 小工具
+
 - [crypto-online](https://github.com/XUJINKAI/crypto-online) 在线密码工具箱
-  - [xx-crypto-cli](https://github.com/XUJINKAI/xx-crypto-cli) [WIP] 跨平台密码工具箱
 
 - [ShellCommand](https://github.com/XUJINKAI/ShellCommand) 通过配置文件动态添加右键菜单
+
+- [wxbot](https://github.com/XUJINKAI/wxbot) 轻量单文件微信bot机器人
+
+#### Linux 工具
+
+- [ovpn](https://github.com/XUJINKAI/ovpn) 轻量 OpenVPN 管理工具，自动管理 CA，支持口令验证，支持模板
 
 #### 库
 
