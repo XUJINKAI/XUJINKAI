@@ -14,6 +14,8 @@
 
 - [wxbot](https://github.com/XUJINKAI/wxbot) 轻量单文件微信bot机器人
 
+- [ai-side-project](https://github.com/XUJINKAI/ai-side-project) AI 试验田，小项目合集
+
 #### Linux 工具
 
 - [ovpn](https://github.com/XUJINKAI/ovpn) 轻量 OpenVPN 管理工具，自动管理 CA，支持口令验证，支持模板
