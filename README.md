@@ -12,8 +12,6 @@
 
 - [crypto-online](https://github.com/XUJINKAI/crypto-online) 在线密码工具箱
 
-- [ShellCommand](https://github.com/XUJINKAI/ShellCommand) 通过配置文件动态添加右键菜单
-
 - [wxbot](https://github.com/XUJINKAI/wxbot) 轻量单文件微信bot机器人
 
 #### Linux 工具
