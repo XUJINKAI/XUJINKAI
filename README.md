@@ -2,7 +2,7 @@
   <img align="right" width="400" src="https://github-stats-extended.vercel.app/api?username=xujinkai&show_icons=true" />
 </a>
 
-#### 个人博客 [xujinkai.net](https://xujinkai.net/) 
+#### 个人博客 [xujinkai.net](https://xujinkai.net/)
 
 #### 桌面应用
 
@@ -10,7 +10,7 @@
 
 #### 小工具
 
-- [crypto-online](https://github.com/XUJINKAI/crypto-online) 在线密码工具箱
+- [crypto-online](https://github.com/XUJINKAI/crypto-online) 在线密码工具箱 [Demo](https://xujinkai.net/crypto/msg)
 
 - [wxbot](https://github.com/XUJINKAI/wxbot) 轻量单文件微信bot机器人
 
@@ -19,6 +19,8 @@
 #### Linux 工具
 
 - [ovpn](https://github.com/XUJINKAI/ovpn) 轻量 OpenVPN 管理工具，自动管理 CA，支持口令验证，支持模板
+
+- [HomeFrame](https://github.com/XUJINKAI/HomeFrame) 纯静态、极简 homelab 主页 [Demo](https://xujinkai.github.io/HomeFrame/)
 
 #### 库
 
