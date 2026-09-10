@@ -2,11 +2,13 @@
   <img align="right" width="400" src="https://github-stats-extended.vercel.app/api?username=xujinkai&show_icons=true" />
 </a>
 
+
+
 #### 个人博客 [xujinkai.net](https://xujinkai.net/)
 
-#### 桌面应用
+- [OneQuick 官网](http://onequick.org/) Windows热键辅助工具，简化操作，提高效率
 
-- [OneQuick](http://onequick.org/) Windows热键辅助工具，简化操作，提高效率
+- [兔子波比5 重制版](https://bc5r.xujinkai.net/) 通过网页游玩这个经典J2ME游戏
 
 #### 小工具
 
