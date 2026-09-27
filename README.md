@@ -18,10 +18,10 @@
 
 - [ai-side-project](https://github.com/XUJINKAI/ai-side-project) AI 试验田，小项目合集
 
-#### Linux 工具
+#### Linux
 
 - [ovpn](https://github.com/XUJINKAI/ovpn) 轻量 OpenVPN 管理工具，自动管理 CA，支持口令验证，支持模板
-- 
+
 - [clash-cli](https://github.com/XUJINKAI/clash-cli) 自用的mihomo管理器
 
 - [pve-lite-dashboard](https://github.com/XUJINKAI/pve-lite-dashboard) 轻量化的 PVE 面板，无后台，单页面，快速查看物理设备和 VM 状态。 [Demo](https://xujinkai.github.io/pve-lite-dashboard/)
